@@ -13,6 +13,15 @@ La estructura del proyecto se diseño teniendo en consideración las mejores pr�
 * src/app: Contiene los componentes, servicios, pipes, utilidades y directivas principales de la aplicación.
 * src/app/features: Contiene los componentes, servicios y otros elementos que conforman la aplicación.
 
+## Tecnologías Utilizadas
+
+Se utilizan las siguientes herramientas:
+* HTML
+* CSS
+* JavaScript
+* TypeScript
+* Angular V.16
+
 ## Ramas
 
 ### `main`
