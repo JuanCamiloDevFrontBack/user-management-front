@@ -49,3 +49,4 @@ Ejecutar los siguientes comandos:
 2. `npm i` ó `npm install`.
 3. Poner en ejecución el proyecto del repositorio: `https://github.com/JuanCamiloDevFrontBack/user-management.git`.
 4. Levantar la aplicación con: `npm run start-dev`.
+5. Abrir en el navegador la siguiente url: `http://localhost:5000/`.
