@@ -11,7 +11,7 @@ Adicionalmente el proyecto cuenta con 2 ambientes, el de `Producción` y `Desarr
 La estructura del proyecto se diseño teniendo en consideración las mejores prácticas de organización de un proyecto Angular, quedando su estructura de la siguiente manera:
 * src: Contiene el código fuente de la aplicación.
 * src/app: Contiene los componentes, servicios, pipes, utilidades y directivas principales de la aplicación.
-* src/app/features: Contiene los componentes, servicios y otros elementos que conforman la aplicación.
+* src/app/components: Contiene los componentes, servicios y otros elementos que conforman la aplicación.
 
 ## Tecnologías Utilizadas
 
