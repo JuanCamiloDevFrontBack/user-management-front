@@ -13,7 +13,7 @@ const routes: Routes = [
     loadChildren: () => import('./module/features/features.module')
     .then(m => m.FeaturesModule)
   },
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: '**', component: RouteNotFoundComponent }
 ];
 
