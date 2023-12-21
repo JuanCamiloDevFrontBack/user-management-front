@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { RouteNotFoundComponent } from './utils/route-not-found/route-not-found.component';
 
 const routes: Routes = [
   {
@@ -12,7 +13,8 @@ const routes: Routes = [
     loadChildren: () => import('./module/features/features.module')
     .then(m => m.FeaturesModule)
   },
-  { path: '', redirectTo: '', pathMatch: 'full' }
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '**', component: RouteNotFoundComponent }
 ];
 
 @NgModule({
