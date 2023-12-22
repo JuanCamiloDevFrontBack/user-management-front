@@ -5,6 +5,7 @@ import { LoginRoutingModule } from './login-routing.module';
 import { UserConnectComponent } from './pages/user-connect/user-connect.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
+import { NgZorroComponentsModule } from 'src/app/utils/ng-zorro-components/ng-zorro-components.module';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password
   ],
   imports: [
     CommonModule,
-    LoginRoutingModule
+    LoginRoutingModule,
+    NgZorroComponentsModule
   ]
 })
 export class LoginModule { }
