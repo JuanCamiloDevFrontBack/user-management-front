@@ -26,6 +26,7 @@ Se utilizan las siguientes herramientas:
 * JavaScript
 * TypeScript
 * Angular V.16
+* NgZorro V.16.2.2
 
 ## Ramas
 
