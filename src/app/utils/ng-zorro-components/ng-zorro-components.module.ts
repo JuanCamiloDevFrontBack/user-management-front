@@ -6,7 +6,6 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzFormModule } from 'ng-zorro-antd/form';
 
 @NgModule({
-  declarations: [],
   exports: [
     ReactiveFormsModule,
     NzButtonModule,

@@ -10,7 +10,7 @@ export class UserConnectComponent implements OnInit, OnDestroy {
 
   userForm!: FormGroup;
 
-  private fb = inject(FormBuilder);
+  private readonly fb = inject(FormBuilder);
 
   ngOnInit(): void {
       this.userForm = this.fb.nonNullable.group({

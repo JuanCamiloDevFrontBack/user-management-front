@@ -12,12 +12,15 @@ import en from '@angular/common/locales/en';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { ResponseFooterDirective } from './utils/directive/response-footer.directive';
 
 registerLocaleData(en);
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ResponseFooterDirective
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,8 @@ registerLocaleData(en);
     FeaturesModule,
     FormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NzGridModule
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US }
