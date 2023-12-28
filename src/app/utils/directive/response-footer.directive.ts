@@ -1,4 +1,4 @@
-import { Directive, OnInit, ElementRef, inject, Renderer2, OnDestroy, Input } from '@angular/core';
+import { Directive, OnInit, ElementRef, inject, Renderer2, OnDestroy, Input, AfterContentChecked } from '@angular/core';
 import { Subject, debounceTime, fromEvent, takeUntil } from 'rxjs';
 
 @Directive({
@@ -41,10 +41,16 @@ export class ResponseFooterDirective implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     /*
-    Nota: la forma [useRender2()] se deja comentada pero funciona correctamente,
+    Nota:
+    1- se manda a llamar el método [changePosition()] para que al cargar la
+    vista por primera vez valide las dimenciones del ancho y de esta manera
+    pueda ajustar los contenedores del footer acorde a la pantalla especifica.
+
+    2- la forma [useRender2()] se deja comentada pero funciona correctamente,
     si gusta puede comentar el método useFromEvent() y descomentar useRender2()
     y verá que el funcionamiento es el mismo.*/
-
+    
+    this.changePosition();
     // this.useRender2();
     this.useFromEvent();
   }
@@ -62,26 +68,26 @@ export class ResponseFooterDirective implements OnInit, OnDestroy {
 
   changePosition(): void {
     const brekpoint = 576;
-    const widthView = (this.footerRef as any).offsetParent.clientWidth;
-    const isMove = true;
+    const widthView = this.footerRef.offsetParent.clientWidth;
     const index = this.takeChildrenParent.indexOf(this.takeDivText);
-    
+
     if (widthView < brekpoint && index === 1) {
-      this.render2.insertBefore(
-        this.footerRef,
-        this.takeDivText,
-        this.takeDivImg,
-        isMove);
+      this.moveElement(this.takeDivText, this.takeDivImg);
     } else if (widthView >= brekpoint && index === 0) {
-      this.render2.insertBefore(
-        this.footerRef,
-        this.takeDivImg,
-        this.takeDivText,
-        isMove);
+      this.moveElement(this.takeDivImg, this.takeDivText);
     }
   }
 
-  ngOnDestroy(): void {
+  moveElement(moveElementRef: unknown, elementRefExist: unknown): void {
+    const isMove = true;
+    this.render2.insertBefore(
+      this.footerRef,
+      moveElementRef,
+      elementRefExist,
+      isMove);
+  }
+
+  ngOnDestroy(): void {    
     this.unsuscribe$.next();
     this.unsuscribe$.complete();
   }

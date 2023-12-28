@@ -19,8 +19,9 @@ import { Component } from '@angular/core';
   }
 
   .img-linkedin, .img-github{
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
+    border-radius: 10%;
   }
 
   .img-github {

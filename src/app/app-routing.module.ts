@@ -9,7 +9,7 @@ const routes: Routes = [
     .then(m => m.LoginModule)
   },
   {
-    path: 'features/create-user',
+    path: 'features',
     loadChildren: () => import('./module/features/features.module')
     .then(m => m.FeaturesModule)
   },
