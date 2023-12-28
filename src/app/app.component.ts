@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -9,10 +9,14 @@ import { Component, OnInit } from '@angular/core';
     justify-content: center;
   }
 
+  .container-img {
+    display: flex;
+    justify-content: center;
+  }
+
   .img-linkedin, .img-github{
     width: 80px;
     height: 80px;
-    margin: 5% 0% 0% 35%;
   }
 
   .img-github {
@@ -20,4 +24,4 @@ import { Component, OnInit } from '@angular/core';
   }
   `]
 })
-export class AppComponent {}
+export class AppComponent { }

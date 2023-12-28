@@ -14,13 +14,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { ResponseFooterDirective } from './utils/directive/response-footer.directive';
+import { TestPipe } from './utils/pipes/test.pipe';
 
 registerLocaleData(en);
 
 @NgModule({
   declarations: [
     AppComponent,
-    ResponseFooterDirective
+    ResponseFooterDirective,
+    TestPipe
   ],
   imports: [
     BrowserModule,
