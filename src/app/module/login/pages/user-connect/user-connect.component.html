@@ -1,11 +1,10 @@
-<!-- class="container-main" -->
-<div nz-row style="background-color: brown;">
-  <section nz-col nzXs="0" nzSm="12" nzMd="12" nzLg="12" nzXl="12" style="background-color: rgb(101, 154, 21);">
-    <h1>Hellow!!!</h1>
+<div nz-row>
+  <section nz-col nzXs="0" nzSm="0" nzMd="12" nzLg="12" nzXl="12" >
+    <img class="img-login" src="../assets/imgs/login-svgrepo-com.svg" alt="login">
   </section>
-  <section nz-col nzXs="24" nzSm="12" nzMd="12" nzLg="12" nzXl="12" style="background-color: rgb(68, 104, 13);">
-    <h1>Hellow 2!!!</h1>
-    <!-- form: {{userForm.value | json}}
+
+  <section nz-col nzXs="24" nzSm="24" nzMd="12" nzLg="12" nzXl="12">
+    form: {{userForm.value | json}}
       errors: {{userForm.get('email')?.errors | json}}
     <form nz-form class="login-form" [formGroup]="userForm">
       <nz-form-item>
@@ -35,6 +34,6 @@
       <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Log in</button>
       Or
       <a>register now!</a>
-    </form> -->
+    </form>
   </section>
 </div>

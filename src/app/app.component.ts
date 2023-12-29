@@ -21,11 +21,6 @@ import { Component } from '@angular/core';
   .img-linkedin, .img-github{
     width: 70px;
     height: 70px;
-    border-radius: 10%;
-  }
-
-  .img-github {
-    background-color: white;
   }
   `]
 })

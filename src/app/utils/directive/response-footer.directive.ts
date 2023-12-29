@@ -67,13 +67,13 @@ export class ResponseFooterDirective implements OnInit, OnDestroy {
   }
 
   changePosition(): void {
-    const brekpoint = 576;
+    const breakpoint = 576;
     const widthView = this.footerRef.offsetParent.clientWidth;
     const index = this.takeChildrenParent.indexOf(this.takeDivText);
 
-    if (widthView < brekpoint && index === 1) {
+    if (widthView < breakpoint && index === 1) {
       this.moveElement(this.takeDivText, this.takeDivImg);
-    } else if (widthView >= brekpoint && index === 0) {
+    } else if (widthView >= breakpoint && index === 0) {
       this.moveElement(this.takeDivImg, this.takeDivText);
     }
   }

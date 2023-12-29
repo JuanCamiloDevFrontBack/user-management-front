@@ -1,3 +1,14 @@
+.container-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-login {
+  width: 70%;
+  height: 70%;
+}
+
 .login-form {
     max-width: 300px;
   }
