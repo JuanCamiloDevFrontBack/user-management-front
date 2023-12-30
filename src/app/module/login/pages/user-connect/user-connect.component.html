@@ -1,12 +1,32 @@
-<div nz-row>
-  <section nz-col nzXs="0" nzSm="0" nzMd="12" nzLg="12" nzXl="12" >
-    <img class="img-login" src="../assets/imgs/login-svgrepo-com.svg" alt="login">
+<div nz-row style="width: initial; height: initial;">
+  <section nz-col nzXs="0" nzSm="0" nzMd="12" nzLg="12" nzXl="12">
+    <div class="container-img">
+      <img class="img-login" src="../assets/imgs/login-svgrepo-com.svg" alt="login">
+    </div>
   </section>
 
-  <section nz-col nzXs="24" nzSm="24" nzMd="12" nzLg="12" nzXl="12">
-    form: {{userForm.value | json}}
-      errors: {{userForm.get('email')?.errors | json}}
-    <form nz-form class="login-form" [formGroup]="userForm">
+  <section nz-col nzXs="24" nzSm="24" nzMd="12" nzLg="12" nzXl="12"  style="background-color: olive;">
+    <!-- style="background-color: yellowgreen;" -->
+    <!-- form: {{userForm.value | json}}
+      errors: {{userForm.get('email')?.errors | json}} -->
+
+    <form nz-form class="container-form" style="background-color: cadetblue;">
+      <nz-form-item style="background-color: yellowgreen;">
+        <!-- <nz-form-label [nzSpan]="6" nzFor="email" style="background-color: red;">
+          E-mail
+        </nz-form-label>
+        <nz-form-control [nzSpan]="14" style="background-color: orange;">
+          <input nz-input name="email" type="email" id="email">
+        </nz-form-control> -->
+      </nz-form-item>
+    </form>
+
+
+
+
+
+
+    <!-- <form nz-form class="login-form" [formGroup]="userForm" style="background-color: chartreuse;">
       <nz-form-item>
         <nz-form-control nzErrorTip="Please input your username!">
           <nz-input-group nzPrefixIcon="user">
@@ -22,7 +42,7 @@
         </nz-form-control>
       </nz-form-item>
       <div nz-row class="login-form-margin">
-        <div nz-col [nzSpan]="12">
+        <div nz-col [nzSpan]="7">
           <label nz-checkbox>
             <span>Remember me</span>
           </label>
@@ -34,6 +54,6 @@
       <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Log in</button>
       Or
       <a>register now!</a>
-    </form>
+    </form> -->
   </section>
 </div>

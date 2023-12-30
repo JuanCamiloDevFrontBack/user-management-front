@@ -9,13 +9,13 @@ import { Component } from '@angular/core';
   }
 
   .text-copyright {
-    display: flex;
-    justify-content: center;
+    text-align: center;
   }
 
   .container-img {
     display: flex;
     justify-content: center;
+    align-items: center;
   }
 
   .img-linkedin, .img-github{
