@@ -1,23 +1,39 @@
-<div nz-row style="width: initial; height: initial;">
+<div nz-row>
   <section nz-col nzXs="0" nzSm="0" nzMd="12" nzLg="12" nzXl="12">
     <div class="container-img">
       <img class="img-login" src="../assets/imgs/login-svgrepo-com.svg" alt="login">
     </div>
   </section>
 
-  <section nz-col nzXs="24" nzSm="24" nzMd="12" nzLg="12" nzXl="12"  style="background-color: olive;">
+  <section nz-col nzXs="24" nzSm="24" nzMd="12" nzLg="12" nzXl="12">
     <!-- style="background-color: yellowgreen;" -->
     <!-- form: {{userForm.value | json}}
       errors: {{userForm.get('email')?.errors | json}} -->
-
-    <form nz-form class="container-form" style="background-color: cadetblue;">
-      <nz-form-item style="background-color: yellowgreen;">
-        <!-- <nz-form-label [nzSpan]="6" nzFor="email" style="background-color: red;">
+      <!-- style="background-color: cadetblue;" -->
+    <form nz-form [nzLayout]="userForm.controls.layout.value" >
+      <!-- style="background-color: yellowgreen;" -->
+      <nz-form-item>
+        <!-- style="background-color: olive;" -->
+        <nz-form-label nzFor="email" >
           E-mail
         </nz-form-label>
-        <nz-form-control [nzSpan]="14" style="background-color: orange;">
-          <input nz-input name="email" type="email" id="email">
-        </nz-form-control> -->
+        <!-- style="background-color: orange;" -->
+        <nz-form-control [nzSpan]="null">
+          <input nz-input type="email">
+        </nz-form-control>
+
+      </nz-form-item>
+
+      <nz-form-item>
+        <!-- style="background-color: olive;" -->
+        <nz-form-label [nzSpan]="4"  nzFor="password" >
+          Password
+        </nz-form-label>
+        <!-- style="background-color: orange;" -->
+        <nz-form-control [nzSpan]="22" >
+          <input nz-input type="password">
+        </nz-form-control>
+
       </nz-form-item>
     </form>
 

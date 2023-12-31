@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit, inject } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { NzFormLayoutType } from 'ng-zorro-antd/form';
 
 @Component({
   selector: 'app-user-connect',
@@ -31,12 +32,17 @@ export class HostEventsComponent {
 }*/
 export class UserConnectComponent implements OnInit, OnDestroy {
 
-  userForm!: FormGroup;
+  userForm!: FormGroup<{
+    layout: FormControl<NzFormLayoutType>,
+    email: FormControl<string>,
+    password: FormControl<string>
+  }>;
 
   private readonly fb = inject(FormBuilder);
 
   ngOnInit(): void {
       this.userForm = this.fb.nonNullable.group({
+        layout: ['vertical' as NzFormLayoutType, Validators.required],
         email: ['', [Validators.required, Validators.maxLength(7)]],
         password: ['', Validators.required]
       });

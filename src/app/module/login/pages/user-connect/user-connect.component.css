@@ -11,13 +11,18 @@
   height: 55%;
 }
 
-.container-form {
-  display: flex;
+[nz-form] {
+  width: auto;
+  height: 100%;
+  background-color: orange;
+}
+
+[nz-form] nz-form-item {
   justify-content: center;
   align-items: center;
 }
 
-.login-form {
+/* .login-form {
   width: 80%;
   height: 80%;
 }
@@ -32,4 +37,4 @@
 
 .login-form-button {
   width: 100%;
-}
+} */
