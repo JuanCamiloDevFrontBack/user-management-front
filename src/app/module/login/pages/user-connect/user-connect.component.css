@@ -7,19 +7,36 @@
 }
 
 .img-login {
-  width: 55%;
-  height: 55%;
+  width: 60%;
+  height: 60%;
 }
 
-[nz-form] {
+.img-login-user {
+  width: 15%;
+  height: 15%;
+}
+
+.container-form {
   width: auto;
   height: 100%;
-  background-color: orange;
-}
-
-[nz-form] nz-form-item {
   justify-content: center;
   align-items: center;
+}
+
+.container-img-user-form {
+  display: flex;
+  justify-content: center;
+}
+
+[nz-form] nz-form-item.container-inputs-form {
+  justify-content: center;
+  align-items: center;
+}
+
+[nz-form] nz-form-label.input-labels,
+[nz-form] nz-form-control.input-controls {
+  width: 60%;
+  height: auto;
 }
 
 /* .login-form {
