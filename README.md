@@ -6,7 +6,7 @@ sobre la información a manipular, el cual se divide en 2 ramas `main` y `develo
 
 [//]: <> (Adicionalmente el proyecto cuenta con 2 ambientes, el de `Producción` y `Desarrollo`.)
 
-![](./ImagenProjectMD.png){width='700px'}
+![Imagen del Proyecto](./ImagenProjectMD.png)
 
 ## Estructura del Proyecto
 
