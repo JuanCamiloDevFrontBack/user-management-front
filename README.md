@@ -1,5 +1,5 @@
 # Proyecto de Aprendizaje Angular V.16 CLI
-# Name App Front --> User Management
+# Temática: User Management
 
 Este repositorio contiene un proyecto práctico sobre Angular V.16, que permite efectuar acciones de tipo `CRUD`
 sobre la información a manipular, el cual se divide en 2 ramas `main` y `develop`.
