@@ -33,3 +33,9 @@
   width: 60%;
   height: auto;
 }
+
+#container-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}

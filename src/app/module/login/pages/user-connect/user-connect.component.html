@@ -7,9 +7,7 @@
   </section>
 
   <section nz-col nzXs="24" nzSm="24" nzMd="12" nzLg="12" nzXl="12">
-
     <div nz-row class="container-form">
-
       <div nz-col nzXs="24" nzSm="24" nzMd="22" nzLg="18" nzXl="18">
 
         <form nz-form [nzLayout]="'vertical'" [formGroup]="userForm">
@@ -37,13 +35,17 @@
           </nz-form-item>
 
           <nz-form-item class="container-inputs-form">
-            <button nz-button [nzType]="'primary'" style="width: 60%;">Log in</button>
+            <button nz-button [nzType]="'primary'" style="width: 60%;">Iniciar Sesión</button>
           </nz-form-item>
+
+          <section id="container-links">
+            <a routerLink="register">Registrarse</a>
+            <a routerLink="forgot-password">Olvido su contraseña</a>
+          </section>
 
         </form>
 
       </div>
     </div>
-
   </section>
 </div>
