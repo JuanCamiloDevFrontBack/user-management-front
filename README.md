@@ -6,6 +6,8 @@ sobre la información a manipular, el cual se divide en 2 ramas `main` y `develo
 
 [//]: <> (Adicionalmente el proyecto cuenta con 2 ambientes, el de `Producción` y `Desarrollo`.)
 
+![](./ImagenProjectMD.png){width='700px'}
+
 ## Estructura del Proyecto
 
 La estructura del proyecto se diseño teniendo en consideración las mejores prácticas de organización de un proyecto Angular, quedando su estructura de la siguiente manera:
