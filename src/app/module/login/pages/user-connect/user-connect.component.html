@@ -10,7 +10,7 @@
     <div nz-row class="container-form">
       <div nz-col nzXs="24" nzSm="24" nzMd="22" nzLg="18" nzXl="18">
 
-        <form nz-form [nzLayout]="'vertical'" [formGroup]="userForm">
+        <form nz-form [nzLayout]="'vertical'" [formGroup]="userForm" (ngSubmit)="sendFormHttp()">
 
           <nz-form-item class="container-inputs-form" [style.margin-bottom]="'0%'">
             <img class="img-login-user" src="../assets/imgs/user-circle-svgrepo-com.svg" alt="login">
@@ -20,7 +20,7 @@
             <nz-form-label class="input-labels">Email</nz-form-label>
             <nz-form-control class="input-controls" nzErrorTip="Please input your username!">
               <nz-input-group nzPrefixIcon="user">
-                <input nz-input type="email" placeholder="Username" formControlName="email">
+                <input nz-input type="email" placeholder="Username" formControlName="{{userE.email}}">
               </nz-input-group>
             </nz-form-control>
           </nz-form-item>
@@ -29,13 +29,13 @@
             <nz-form-label class="input-labels">Password</nz-form-label>
             <nz-form-control class="input-controls" nzErrorTip="Please input your Password!">
               <nz-input-group nzPrefixIcon="lock">
-                <input nz-input type="password" placeholder="Password" formControlName="password">
+                <input nz-input type="password" placeholder="Password" formControlName="{{userE.password}}">
               </nz-input-group>
             </nz-form-control>
           </nz-form-item>
 
           <nz-form-item class="container-inputs-form">
-            <button nz-button [nzType]="'primary'" style="width: 60%;">Iniciar Sesión</button>
+            <button nz-button [nzType]="'primary'" [style.width]="'60%'" type="submit">Iniciar Sesión</button>
           </nz-form-item>
 
           <section id="container-links">
