@@ -55,6 +55,6 @@ Para poner en ejecución el proyecto de la presente rama se requieren los siguie
 Ejecutar los siguientes comandos:
 1. `git clone https://github.com/JuanCamiloDevFrontBack/user-management-front.git`.
 2. `npm i` ó `npm install`.
-3. Poner en ejecución el proyecto del repositorio: `https://github.com/JuanCamiloDevFrontBack/user-management.git`.
+3. Poner en ejecución el proyecto del repositorio: `https://github.com/JuanCamiloDevFrontBack/user-management.git`, de momento esta en desarrollo.
 4. Levantar la aplicación con: `npm run start-dev` ó `npm run start-dev-mobile` si se quiere probar desde un dispositivo móvil directamente(inactivar el firewall para probar en móvil).
 5. Abrir en el navegador la siguiente url: `http://localhost:5000/` ó `http://ip_equipo:5000/` al probarlo en móvil.
