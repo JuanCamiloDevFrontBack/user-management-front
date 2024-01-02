@@ -7,8 +7,8 @@
 }
 
 .img-login {
-  width: 60%;
-  height: 60%;
+  width: 85%;
+  height: 85%;
 }
 
 .img-login-user {
@@ -23,11 +23,6 @@
   align-items: center;
 }
 
-.container-img-user-form {
-  display: flex;
-  justify-content: center;
-}
-
 [nz-form] nz-form-item.container-inputs-form {
   justify-content: center;
   align-items: center;
@@ -38,20 +33,3 @@
   width: 60%;
   height: auto;
 }
-
-/* .login-form {
-  width: 80%;
-  height: 80%;
-}
-
-.login-form-margin {
-  margin-bottom: 16px;
-}
-
-.login-form-forgot {
-  float: right;
-}
-
-.login-form-button {
-  width: 100%;
-} */

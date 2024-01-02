@@ -4,10 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styles: [`
-  footer {
-    margin-top: 15px;
-  }
-
   .text-copyright {
     text-align: center;
   }

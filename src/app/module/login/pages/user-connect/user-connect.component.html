@@ -1,102 +1,49 @@
-<div nz-row>
+<div nz-row [style.height]="'100%'">
+
   <section nz-col nzXs="0" nzSm="0" nzMd="12" nzLg="12" nzXl="12">
     <div class="container-img">
-      <img class="img-login" src="../assets/imgs/welcome3-svgrepo-com.svg" alt="login">
+      <img class="img-login" src="../assets/imgs/welcome-undraw.svg" alt="login">
     </div>
   </section>
 
   <section nz-col nzXs="24" nzSm="24" nzMd="12" nzLg="12" nzXl="12">
 
-    <div nz-row class="container-form" style="background-color: olive;">
-
-      <div nz-col nzXs="24" nzSm="24" nzMd="22" nzLg="18" nzXl="18" class="container-img-user-form">
-        <img class="img-login-user" src="../assets/imgs/user-circle-svgrepo-com.svg" alt="login">
-      </div>
+    <div nz-row class="container-form">
 
       <div nz-col nzXs="24" nzSm="24" nzMd="22" nzLg="18" nzXl="18">
-  
+
         <form nz-form [nzLayout]="'vertical'" [formGroup]="userForm">
+
+          <nz-form-item class="container-inputs-form" [style.margin-bottom]="'0%'">
+            <img class="img-login-user" src="../assets/imgs/user-circle-svgrepo-com.svg" alt="login">
+          </nz-form-item>
+
           <nz-form-item class="container-inputs-form">
             <nz-form-label class="input-labels">Email</nz-form-label>
-            <nz-form-control class="input-controls">
-              <input nz-input type="email" formControlName="email">
+            <nz-form-control class="input-controls" nzErrorTip="Please input your username!">
+              <nz-input-group nzPrefixIcon="user">
+                <input nz-input type="email" placeholder="Username" formControlName="email">
+              </nz-input-group>
             </nz-form-control>
           </nz-form-item>
-    
+
           <nz-form-item class="container-inputs-form">
             <nz-form-label class="input-labels">Password</nz-form-label>
-            <nz-form-control class="input-controls">
-              <input nz-input type="password" formControlName="password">
+            <nz-form-control class="input-controls" nzErrorTip="Please input your Password!">
+              <nz-input-group nzPrefixIcon="lock">
+                <input nz-input type="password" placeholder="Password" formControlName="password">
+              </nz-input-group>
             </nz-form-control>
           </nz-form-item>
+
+          <nz-form-item class="container-inputs-form">
+            <button nz-button [nzType]="'primary'" style="width: 60%;">Log in</button>
+          </nz-form-item>
+
         </form>
+
       </div>
     </div>
 
-    <!-- style="background-color: yellowgreen;" --
-    !-- form: {{userForm.value | json}}
-      errors: {{userForm.get('email')?.errors | json}} --
-      <-- style="background-color: cadetblue;" --
-    <form nz-form [nzLayout]="userForm.controls.layout.value" >
-      !-- style="background-color: yellowgreen;" --
-      <nz-form-item>
-        <-- style="background-color: olive;" --
-        <nz-form-label nzFor="email" >
-          E-mail
-        </nz-form-label>
-        !-- style="background-color: orange;" --
-        <nz-form-control [nzSpan]="null">
-          <input nz-input type="email">
-        </nz-form-control>
-
-      </nz-form-item>
-
-      <nz-form-item>
-        !-- style="background-color: olive;" --
-        <nz-form-label [nzSpan]="4"  nzFor="password" >
-          Password
-        </nz-form-label>
-        <-- style="background-color: orange;" --
-        <nz-form-control [nzSpan]="22" >
-          <input nz-input type="password">
-        </nz-form-control>
-
-      </nz-form-item>
-    </form>-->
-
-
-
-
-
-
-    <!-- <form nz-form class="login-form" [formGroup]="userForm" style="background-color: chartreuse;">
-      <nz-form-item>
-        <nz-form-control nzErrorTip="Please input your username!">
-          <nz-input-group nzPrefixIcon="user">
-            <input type="text" nz-input formControlName="email" placeholder="Username" />
-          </nz-input-group>
-        </nz-form-control>
-      </nz-form-item>
-      <nz-form-item>
-        <nz-form-control nzErrorTip="Please input your Password!">
-          <nz-input-group nzPrefixIcon="lock">
-            <input type="password" nz-input formControlName="password" placeholder="Password" />
-          </nz-input-group>
-        </nz-form-control>
-      </nz-form-item>
-      <div nz-row class="login-form-margin">
-        <div nz-col [nzSpan]="7">
-          <label nz-checkbox>
-            <span>Remember me</span>
-          </label>
-        </div>
-        <div nz-col [nzSpan]="12">
-          <a class="login-form-forgot">Forgot password</a>
-        </div>
-      </div>
-      <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Log in</button>
-      Or
-      <a>register now!</a>
-    </form> -->
   </section>
 </div>
