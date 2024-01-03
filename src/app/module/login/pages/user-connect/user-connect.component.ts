@@ -22,7 +22,7 @@ export class UserConnectComponent implements OnInit, OnDestroy {
   private readonly fb = inject(FormBuilder);
 
   ngOnInit(): void {
-    /* Nota: Se invoca el método showSectionImg() para detectar las dimensiones de la pantalla y decidir si mostrar o no la sección de la imagen. Esta acción es necesaria porque al cargar la pantalla en el decorador @Component en el 'host', no se emite ningún evento de 'resize' en el primer renderizado de la pantalla. */
+    /* Nota: Se invoca el método showSectionImg() para detectar las dimensiones de la pantalla y decidir si renderizar o no la sección de la imagen. Esta acción es necesaria porque al cargar la pantalla en el decorador @Component el atributo 'host', no emite ningún evento de 'resize' en el primer renderizado de la pantalla. */
     this.showSectionImg();
     this.initForm();
   }
@@ -37,13 +37,15 @@ export class UserConnectComponent implements OnInit, OnDestroy {
   }
 
   initForm(): void {
+    const { email, password } = LoginE;
+
     this.userForm = this.fb.nonNullable.group({
-      [LoginE.email]: ['', Validators.required],
-      [LoginE.password]: ['', Validators.required]
+      [email]: ['', Validators.required],
+      [password]: ['', Validators.required]
     });
   }
 
-  sendFormHttp(): void {
+  sendFormBackend(): void {
     alert(JSON.stringify(this.userForm.value, null, 2));
   }
 
