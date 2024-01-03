@@ -1,7 +1,7 @@
 <div nz-row [style.height]="'100%'">
 
   <section nz-col nzXs="0" nzSm="0" nzMd="12" nzLg="12" nzXl="12">
-    <div class="container-img">
+    <div *ngIf="isVisible" class="container-img">
       <img class="img-login" src="../assets/imgs/welcome-undraw.svg" alt="login">
     </div>
   </section>

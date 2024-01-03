@@ -1,52 +1,45 @@
 import { Component, OnDestroy, OnInit, inject } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { NzFormLayoutType } from 'ng-zorro-antd/form';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginE } from 'src/app/interfaces/login/login.enum';
 import { LoginI } from 'src/app/interfaces/login/login.interface';
 
 @Component({
   selector: 'app-user-connect',
   templateUrl: './user-connect.component.html',
-  styleUrls: ['./user-connect.component.css']
-})
-
-/*
-Ejemplo de internet que voy a utilizar para acoplarlo a la sección de la imagen
-esto para que no se renderice un elemtno cunaod no se necesite.
-@Component({
-  // ...
-  
+  styleUrls: ['./user-connect.component.css'],
   host: {
-    class: 'host-events',
-    '(mouseenter)': 'onMouseEnter()',
-    '(mouseleave)': 'onMouseLeave()',
-    '(window:resize)': 'onWindowResize()'
+    id: 'host-event-resize',
+    '(window:resize)': 'showSectionImg()'
   }
 })
-export class HostEventsComponent {
-
-  // ...
-
-  onWindowResize() {
-    console.log('Window resized');
-  }
-
-}*/
 export class UserConnectComponent implements OnInit, OnDestroy {
 
+  isVisible!: boolean;
   userE: any = LoginE;
   userForm!: FormGroup<LoginI>;
 
   private readonly fb = inject(FormBuilder);
 
   ngOnInit(): void {
-      this.userForm = this.fb.nonNullable.group({
-        [LoginE.email]: ['', [Validators.required, Validators.maxLength(7)]],
-        [LoginE.password]: ['', Validators.required]
-      });
+    /* Nota: Se invoca el método showSectionImg() para detectar las dimensiones de la pantalla y decidir si mostrar o no la sección de la imagen. Esta acción es necesaria porque al cargar la pantalla en el decorador @Component en el 'host', no se emite ningún evento de 'resize' en el primer renderizado de la pantalla. */
+    this.showSectionImg();
+    this.initForm();
   }
 
   ngOnDestroy(): void {}
+
+  showSectionImg(): void {
+    const dimScreen = visualViewport?.width ?? 768;
+    if (dimScreen < 768) this.isVisible = false;
+    else this.isVisible = true;
+  }
+
+  initForm(): void {
+    this.userForm = this.fb.nonNullable.group({
+      [LoginE.email]: ['', Validators.required],
+      [LoginE.password]: ['', Validators.required]
+    });
+  }
 
   sendFormHttp(): void {
     alert(JSON.stringify(this.userForm.value, null, 2));
