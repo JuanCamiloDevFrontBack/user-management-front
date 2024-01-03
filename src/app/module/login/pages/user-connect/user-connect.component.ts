@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit, inject } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewEncapsulation, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginE } from 'src/app/interfaces/login/login.enum';
 import { LoginI } from 'src/app/interfaces/login/login.interface';
@@ -7,8 +7,9 @@ import { LoginI } from 'src/app/interfaces/login/login.interface';
   selector: 'app-user-connect',
   templateUrl: './user-connect.component.html',
   styleUrls: ['./user-connect.component.css'],
+  encapsulation: ViewEncapsulation.None,
   host: {
-    id: 'host-event-resize',
+    id: 'host-heigth-component',
     '(window:resize)': 'showSectionImg()'
   }
 })
@@ -28,9 +29,10 @@ export class UserConnectComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {}
 
-  showSectionImg(): void {
-    const dimScreen = visualViewport?.width ?? 768;
-    if (dimScreen < 768) this.isVisible = false;
+  showSectionImg(): void {   
+    const breakpoint = 768;
+    const dimScreen = visualViewport?.width ?? breakpoint;
+    if (dimScreen < breakpoint) this.isVisible = false;
     else this.isVisible = true;
   }
 

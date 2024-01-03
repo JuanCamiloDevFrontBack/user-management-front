@@ -1,7 +1,6 @@
-<div nz-row [style.height]="'100%'">
-
+<div nz-row [style.min-height]="'inherit'">
   <section nz-col nzXs="0" nzSm="0" nzMd="12" nzLg="12" nzXl="12">
-    <div *ngIf="isVisible" class="container-img">
+    <div *ngIf="isVisible" class="container-img-login">
       <img class="img-login" src="../assets/imgs/welcome-undraw.svg" alt="login">
     </div>
   </section>
@@ -17,19 +16,19 @@
           </nz-form-item>
 
           <nz-form-item class="container-inputs-form">
-            <nz-form-label class="input-labels">Email</nz-form-label>
+            <nz-form-label class="input-labels">Correo electrónico</nz-form-label>
             <nz-form-control class="input-controls" nzErrorTip="Please input your username!">
               <nz-input-group nzPrefixIcon="user">
-                <input nz-input type="email" placeholder="Username" formControlName="{{userE.email}}">
+                <input nz-input type="email" placeholder="Correo electrónico" formControlName="{{userE.email}}">
               </nz-input-group>
             </nz-form-control>
           </nz-form-item>
 
           <nz-form-item class="container-inputs-form">
-            <nz-form-label class="input-labels">Password</nz-form-label>
+            <nz-form-label class="input-labels">Contraseña</nz-form-label>
             <nz-form-control class="input-controls" nzErrorTip="Please input your Password!">
               <nz-input-group nzPrefixIcon="lock">
-                <input nz-input type="password" placeholder="Password" formControlName="{{userE.password}}">
+                <input nz-input type="password" placeholder="Contraseña" formControlName="{{userE.password}}">
               </nz-input-group>
             </nz-form-control>
           </nz-form-item>
