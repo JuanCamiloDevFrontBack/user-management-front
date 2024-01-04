@@ -8,7 +8,7 @@
   <section nz-col nzXs="24" nzSm="24" nzMd="12" nzLg="12" nzXl="12">
     <div nz-row class="container-form">
       <div nz-col nzXs="24" nzSm="24" nzMd="22" nzLg="18" nzXl="18">
-
+        
         <form nz-form [nzLayout]="'vertical'" [formGroup]="userForm" (ngSubmit)="sendFormBackend()">
 
           <nz-form-item class="container-inputs-form" [style.margin-bottom]="'0%'">
@@ -17,7 +17,7 @@
 
           <nz-form-item class="container-inputs-form">
             <nz-form-label class="input-labels">Correo electrónico</nz-form-label>
-            <nz-form-control class="input-controls" nzErrorTip="Please input your username!">
+            <nz-form-control class="input-controls" nzErrorTip="{{this.errorControls.password}}">
               <nz-input-group nzPrefixIcon="user">
                 <input nz-input type="email" placeholder="Correo electrónico" formControlName="{{userE.email}}">
               </nz-input-group>
@@ -26,7 +26,7 @@
 
           <nz-form-item class="container-inputs-form">
             <nz-form-label class="input-labels">Contraseña</nz-form-label>
-            <nz-form-control class="input-controls" nzErrorTip="Please input your Password!">
+            <nz-form-control class="input-controls" nzErrorTip="{{this.errorControls.password}}">
               <nz-input-group nzPrefixIcon="lock">
                 <input nz-input type="password" placeholder="Contraseña" formControlName="{{userE.password}}">
               </nz-input-group>
