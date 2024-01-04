@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-forgot-password',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./forgot-password.component.css']
 })
 export class ForgotPasswordComponent {
+
+  private readonly router = inject(Router);
+
+  backScreen(): void {
+    this.router.navigate(['login']);
+  }
 
 }
