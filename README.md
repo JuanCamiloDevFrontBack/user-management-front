@@ -1,4 +1,4 @@
-# Proyecto de Aprendizaje Angular V.16 CLI
+# Proyecto sobre Angular V.16 CLI
 # Temática: User Management
 
 Este repositorio contiene un proyecto práctico sobre Angular V.16, que permite efectuar acciones de tipo `CRUD`
