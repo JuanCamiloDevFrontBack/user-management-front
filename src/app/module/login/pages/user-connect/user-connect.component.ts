@@ -11,7 +11,8 @@ import { LoginI } from 'src/app/interfaces/login/login.interface';
   encapsulation: ViewEncapsulation.None,
   host: {
     id: 'host-heigth-component',
-    '(window:resize)': 'showSectionImg()'
+    '(window:resize)': 'showSectionImg()',
+    // '(window:matchMedia("min-width: 720px"))': 'showSectionImg()' --> para probar
   }
 })
 export class UserConnectComponent implements OnInit, OnDestroy {
@@ -75,7 +76,6 @@ export class UserConnectComponent implements OnInit, OnDestroy {
     }
 
     this.userForm.get(password)?.valueChanges
-      // .pipe(debounceTime(500))
       .pipe(takeUntil(this.unsuscribe$))
       .subscribe(getErrorForm);
   }
