@@ -6,6 +6,11 @@ export interface LoginI {
     [LoginE.password]: FormControl<string>;
 }
 
+export interface LoginUserI {
+    [LoginE.email]: string;
+    [LoginE.password]: string;
+}
+
 export interface RegisterI {
 }
 

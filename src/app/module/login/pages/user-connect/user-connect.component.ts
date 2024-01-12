@@ -1,8 +1,9 @@
 import { Component, OnDestroy, OnInit, ViewEncapsulation, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Subject, debounceTime, takeUntil } from 'rxjs';
+import { Subject, takeUntil } from 'rxjs';
 import { LoginE } from 'src/app/core/interfaces/login/login.enum';
-import { LoginI } from 'src/app/core/interfaces/login/login.interface';
+import { LoginI, LoginUserI } from 'src/app/core/interfaces/login/login.interface';
+import { UserConnectService } from 'src/app/core/services/user-connect/user-connect.service';
 
 @Component({
   selector: 'app-user-connect',
@@ -11,8 +12,7 @@ import { LoginI } from 'src/app/core/interfaces/login/login.interface';
   encapsulation: ViewEncapsulation.None,
   host: {
     id: 'host-heigth-component',
-    '(window:resize)': 'showSectionImg()',
-    // '(window:matchMedia("min-width: 720px"))': 'showSectionImg()' --> para probar
+    '(window:resize)': 'showSectionImg()'
   }
 })
 export class UserConnectComponent implements OnInit, OnDestroy {
@@ -25,6 +25,7 @@ export class UserConnectComponent implements OnInit, OnDestroy {
   private unsuscribe$: Subject<void> = new Subject();
 
   private readonly fb = inject(FormBuilder);
+  private readonly userServices = inject(UserConnectService);
 
   ngOnInit(): void {
     /* Nota: Se invoca el método showSectionImg() para detectar las dimensiones de la pantalla y decidir si renderizar o no la sección de la imagen. Esta acción es necesaria porque al cargar la pantalla en el decorador @Component el atributo 'host', no emite ningún evento de 'resize' en el primer renderizado de la pantalla. */
@@ -90,7 +91,11 @@ export class UserConnectComponent implements OnInit, OnDestroy {
   }
 
   sendFormBackend(): void {
-    alert(JSON.stringify(this.userForm.value, null, 2));
+    const request = this.userForm.value as LoginUserI;
+    this.userServices.loginUserHttp(request).subscribe({
+      next: () => console.log('Success :)'),
+      error: () => console.log('Error :('),
+    });
   }
 
 }
