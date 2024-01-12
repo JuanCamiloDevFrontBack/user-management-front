@@ -1,4 +1,4 @@
-# Proyecto sobre Angular V.16 CLI
+# Proyecto en Angular V.16 CLI
 # Temática: User Management
 # Estado del Proyecto: En Desarrollo.
 
