@@ -17,7 +17,7 @@
 
           <nz-form-item class="container-inputs-form">
             <nz-form-label class="input-labels">Correo electrónico</nz-form-label>
-            <nz-form-control class="input-controls" nzErrorTip="{{this.errorControls.password}}">
+            <nz-form-control class="input-controls" nzErrorTip="{{errorControls.email}}">
               <nz-input-group nzPrefixIcon="user">
                 <input nz-input type="email" placeholder="Correo electrónico" formControlName="{{userE.email}}">
               </nz-input-group>
@@ -26,7 +26,7 @@
 
           <nz-form-item class="container-inputs-form">
             <nz-form-label class="input-labels">Contraseña</nz-form-label>
-            <nz-form-control class="input-controls" nzErrorTip="{{this.errorControls.password}}">
+            <nz-form-control class="input-controls" nzErrorTip="{{errorControls.password}}">
               <nz-input-group nzPrefixIcon="lock">
                 <input nz-input type="password" placeholder="Contraseña" formControlName="{{userE.password}}">
               </nz-input-group>
@@ -34,7 +34,14 @@
           </nz-form-item>
 
           <nz-form-item class="container-inputs-form">
-            <button nz-button [nzType]="'primary'" [style.width]="'60%'" type="submit">Iniciar Sesión</button>
+            <button nz-button
+            [nzType]="'primary'"
+            [style.width]="'60%'"
+            type="submit"
+            [disabled]="userForm.invalid"
+            >
+            Iniciar Sesión
+          </button>
           </nz-form-item>
 
           <section id="container-links">

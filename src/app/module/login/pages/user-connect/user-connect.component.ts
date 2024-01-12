@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit, ViewEncapsulation, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subject, debounceTime, takeUntil } from 'rxjs';
-import { LoginE } from 'src/app/interfaces/login/login.enum';
-import { LoginI } from 'src/app/interfaces/login/login.interface';
+import { LoginE } from 'src/app/core/interfaces/login/login.enum';
+import { LoginI } from 'src/app/core/interfaces/login/login.interface';
 
 @Component({
   selector: 'app-user-connect',
@@ -67,17 +67,26 @@ export class UserConnectComponent implements OnInit, OnDestroy {
   changeValueControl(): void {
     const { email, password } = LoginE;
 
-    const getErrorForm = () => {
-      const isRequired = this.controlError(password, 'required');    
-      const isMinLength = this.controlError(password, 'minlength');
-      
-      if (isRequired) this.errorControls.password = ({1: 'Campo requerido'})[1] ?? '';
-      if (isMinLength) this.errorControls.password = ({1: 'Ingrese mínimo 8 caracteres'})[1] ?? '';
+    const isValidControl = ({control, error}: any) => {
+      const isValid = this.controlError(control, error);
+      if (isValid) {
+        this.errorControls[control] = {
+          'required': 'Campo requerido',
+          'minlength': 'Ingrese mínimo 8 caracteres',
+        }[error as string] ?? '';
+      }
     }
+
+    this.userForm.get(email)?.valueChanges
+      .pipe(takeUntil(this.unsuscribe$))
+      .subscribe(_ => isValidControl({control: email, error: 'required'}));
 
     this.userForm.get(password)?.valueChanges
       .pipe(takeUntil(this.unsuscribe$))
-      .subscribe(getErrorForm);
+      .subscribe(_ => {
+        isValidControl({control: password, error: 'required'});
+        isValidControl({control: password, error: 'minlength'});
+      });
   }
 
   sendFormBackend(): void {
