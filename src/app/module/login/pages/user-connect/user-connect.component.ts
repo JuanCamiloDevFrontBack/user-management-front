@@ -1,9 +1,11 @@
 import { Component, OnDestroy, OnInit, ViewEncapsulation, inject } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Subject, takeUntil } from 'rxjs';
 import { LoginE } from 'src/app/core/interfaces/login/login.enum';
-import { LoginI, LoginUserI } from 'src/app/core/interfaces/login/login.interface';
+import { LoginI } from 'src/app/core/interfaces/login/login.interface';
 import { UserConnectService } from 'src/app/core/services/user-connect/user-connect.service';
+
+type InputsForm = FormControl<string>;
 
 @Component({
   selector: 'app-user-connect',
@@ -19,7 +21,7 @@ export class UserConnectComponent implements OnInit, OnDestroy {
 
   isVisible!: boolean;
   userE: any = LoginE;
-  userForm!: FormGroup<LoginI>;
+  userForm!: FormGroup<LoginI<InputsForm>>;
   errorControls!: any;
 
   private unsuscribe$: Subject<void> = new Subject();
@@ -91,7 +93,8 @@ export class UserConnectComponent implements OnInit, OnDestroy {
   }
 
   sendFormBackend(): void {
-    const request = this.userForm.value as LoginUserI;
+    const request = this.userForm.value as LoginI<string>;
+    
     this.userServices.loginUserHttp(request).subscribe({
       next: () => console.log('Success :)'),
       error: () => console.log('Error :('),
