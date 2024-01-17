@@ -18,7 +18,6 @@ type InputsForm = FormControl<string>;
   }
 })
 export class UserConnectComponent implements OnInit, OnDestroy {
-  vacio = ''
 
   isVisible!: boolean;
   userE: any = LoginE;
@@ -62,7 +61,6 @@ export class UserConnectComponent implements OnInit, OnDestroy {
       [password]: ['', [Validators.required, Validators.minLength(8)]]
     });
     this.changeValueControl();
-this.vacio = '';
   }
 
   controlError(control: string, typeError: string): boolean {
@@ -94,15 +92,13 @@ this.vacio = '';
       });
   }
 
-  sendFormBackend(): void {
+  submitForm(): void {
     const request = this.userForm.value as LoginI<string>;
     console.log(request);    
     this.userServices.loginUserHttp(request).subscribe({
       next: () => console.log('Success :)'),
       error: () => console.log('Error :('),
     });
-
-    setTimeout(() => this.userForm.reset(), 7000)
   }
 
 }

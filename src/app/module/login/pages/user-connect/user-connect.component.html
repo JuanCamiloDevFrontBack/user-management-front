@@ -9,7 +9,7 @@
     <div nz-row class="container-form">
       <div nz-col nzXs="24" nzSm="24" nzMd="22" nzLg="18" nzXl="18">
         
-        <form nz-form [nzLayout]="'vertical'" [formGroup]="userForm" (ngSubmit)="sendFormBackend()">
+        <form nz-form [nzLayout]="'vertical'" [formGroup]="userForm" (ngSubmit)="submitForm()">
 
           <nz-form-item class="container-inputs-form" [style.margin-bottom]="'0%'">
             <img class="img-login-user" src="../assets/imgs/user-circle-svgrepo-com.svg" alt="login">
@@ -22,7 +22,7 @@
                 <!-- TODO: el primer input se utiliza para anular el autocompletado
                   del navegador cuando existen credenciales guardadas -->
                 <input nz-input type="email" name="email" hidden>
-                <input nz-input type="email" name="email" placeholder="Correo electrónico" formControlName="{{userE.email}}" style="background: transparent;">
+                <input nz-input type="email" name="email" placeHolder="Correo electrónico" formControlName="{{userE.email}}">
               </nz-input-group>
             </nz-form-control>
           </nz-form-item>
