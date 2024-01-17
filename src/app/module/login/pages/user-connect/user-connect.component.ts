@@ -18,6 +18,7 @@ type InputsForm = FormControl<string>;
   }
 })
 export class UserConnectComponent implements OnInit, OnDestroy {
+  vacio = ''
 
   isVisible!: boolean;
   userE: any = LoginE;
@@ -50,17 +51,18 @@ export class UserConnectComponent implements OnInit, OnDestroy {
 
   initVariableGlobals(): void {
     const { email, password } = LoginE;
-    this.errorControls = { [email]: '', [password]: '' };  
+    this.errorControls = { [email]: '', [password]: '' };    
   }
 
   initForm(): void {
     const { email, password } = LoginE;
-
+    
     this.userForm = this.fb.nonNullable.group({
-      [email]: ['', Validators.required],
+      [email]: ['', [Validators.required, Validators.email]],
       [password]: ['', [Validators.required, Validators.minLength(8)]]
     });
     this.changeValueControl();
+this.vacio = '';
   }
 
   controlError(control: string, typeError: string): boolean {
@@ -94,11 +96,13 @@ export class UserConnectComponent implements OnInit, OnDestroy {
 
   sendFormBackend(): void {
     const request = this.userForm.value as LoginI<string>;
-    
+    console.log(request);    
     this.userServices.loginUserHttp(request).subscribe({
       next: () => console.log('Success :)'),
       error: () => console.log('Error :('),
     });
+
+    setTimeout(() => this.userForm.reset(), 7000)
   }
 
 }

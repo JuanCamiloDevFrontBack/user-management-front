@@ -35,7 +35,7 @@
 [nz-form] nz-form-label.input-labels,
 [nz-form] nz-form-control.input-controls {
   width: 60%;
-  height: auto;
+  height: auto;;
 }
 
 #container-links {

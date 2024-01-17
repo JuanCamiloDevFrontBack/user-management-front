@@ -19,7 +19,10 @@
             <nz-form-label class="input-labels">Correo electrónico</nz-form-label>
             <nz-form-control class="input-controls" nzErrorTip="{{errorControls.email}}">
               <nz-input-group nzPrefixIcon="user">
-                <input nz-input type="email" placeholder="Correo electrónico" formControlName="{{userE.email}}">
+                <!-- TODO: el primer input se utiliza para anular el autocompletado
+                  del navegador cuando existen credenciales guardadas -->
+                <input nz-input type="email" name="email" hidden>
+                <input nz-input type="email" name="email" placeholder="Correo electrónico" formControlName="{{userE.email}}" style="background: transparent;">
               </nz-input-group>
             </nz-form-control>
           </nz-form-item>
@@ -28,7 +31,10 @@
             <nz-form-label class="input-labels">Contraseña</nz-form-label>
             <nz-form-control class="input-controls" nzErrorTip="{{errorControls.password}}">
               <nz-input-group nzPrefixIcon="lock">
-                <input nz-input type="password" placeholder="Contraseña" formControlName="{{userE.password}}">
+                <!-- TODO: el primer input se utiliza para anular el autocompletado
+                  del navegador cuando existen credenciales guardadas -->
+                <input type="password" name="password" hidden>
+                <input nz-input type="password" name="password" placeholder="Contraseña" autocomplete="new-password" formControlName="{{userE.password}}">
               </nz-input-group>
             </nz-form-control>
           </nz-form-item>
