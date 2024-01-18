@@ -94,11 +94,20 @@ export class UserConnectComponent implements OnInit, OnDestroy {
 
   submitForm(): void {
     const request = this.userForm.value as LoginI<string>;
-    console.log(request);    
+      
     this.userServices.loginUserHttp(request).subscribe({
-      next: () => console.log('Success :)'),
-      error: () => console.log('Error :('),
+      next: res => console.log('Success :): ', res),
+      error: err => console.log('Error :(: ', err),
     });
+
+    this.userServices.loginUserHttpBackend(request).subscribe({
+      next: res => console.log('Success using HttpBackend :)', res),
+      error: err => console.log('Error using HttpBackend :(', err),
+    });
+
+    this.userServices.loginUserHttpFetch(request)
+    .then(res => console.log('Success using Fetch: ', res))
+      .catch(err => console.log('Errr using Fetch: ', err));
   }
 
 }

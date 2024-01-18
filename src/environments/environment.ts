@@ -1,3 +1,4 @@
 export const environment = {
-    API: ''
+    production: true,
+    API: 'http://url-back-desplegado/autodidact/'
 };

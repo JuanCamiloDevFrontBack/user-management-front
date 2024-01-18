@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
+    "start-prod": "ng serve --port=5000 -c=production",
     "start-dev": "ng serve --port=5000",
     "start-dev-mobile": "ng serve --host=0.0.0.0 --port=5000",
     "build": "ng build",
