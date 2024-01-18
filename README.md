@@ -42,6 +42,8 @@ en este caso el archivo `README`.
 
 En la rama `develop` encontrarás el proyecto de Angular, el cual gestiona usuarios. Incluye la creación de menús para las pantallas a las que pueden acceder, así como otras funcionalidades como la creación de usuarios, asignación de permisos y la actualización de su información de contacto, entre otras.
 
+Cabe mencionar que el proyecto ya tiene configurado 2 ambientes, correspondientes a `environment.ts`(si se despliega a producción tomaría este archivo) y `environment.development.ts`(al desplegarlo en modo desarrollo toma este archivo).
+
 ## Instrucciones de Ejecución
 
 ### Rama Develop
