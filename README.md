@@ -18,8 +18,7 @@ La estructura del proyecto se diseño teniendo en consideración las mejores pr�
 * src/app/interfaces: contiene todas las interfacez en la aplicación.
 * src/app/utils: contiene todos los interceptores y otras cosas más de la aplicación.
 * src/app/module: contiene todos los módulos en la aplicación.
-* src/app/module/login: contiene los componentes y otros elementos que conforman la aplicación.
-* src/app/module/features: contiene los componentes y otros elementos que conforman la aplicación.
+* src/app/module/xyz: contienen los componentes y otros elementos que conforman la aplicación.
 
 ## Tecnologías Utilizadas
 
