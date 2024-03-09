@@ -100,6 +100,12 @@ export class UserConnectComponent implements OnInit, OnDestroy {
       error: err => console.log('Error :(: ', err),
     });
 
+    /*
+    TODO: se dejan comentados estos métodos ya que se dejan a modo
+    de ejemplo y aprendizaje. Cabe mencionar que el método: loginUserHttpFetch()
+    no se recomienda su uso, pero evitar algún inconveniente con angular,
+    en especial si la app tiene implementados interceptores de peticiones http.
+
     this.userServices.loginUserHttpBackend(request).subscribe({
       next: res => console.log('Success using HttpBackend :)', res),
       error: err => console.log('Error using HttpBackend :(', err),
@@ -108,6 +114,8 @@ export class UserConnectComponent implements OnInit, OnDestroy {
     this.userServices.loginUserHttpFetch(request)
     .then(res => console.log('Success using Fetch: ', res))
       .catch(err => console.log('Errr using Fetch: ', err));
+      */
   }
+  
 
 }

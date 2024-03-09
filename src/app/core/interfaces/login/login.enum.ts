@@ -1,5 +1,5 @@
 export enum LoginE {
-    email = 'email',
+    email = 'user',
     password = 'password'
 }
 

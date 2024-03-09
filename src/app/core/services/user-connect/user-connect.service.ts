@@ -19,15 +19,16 @@ export class UserConnectService {
   }
 
   loginUserHttp(infoUser: LoginI<string>): Observable<unknown> {
-    return this.http.post<unknown>(this.api, JSON.stringify(infoUser))
+    return this.http.post<unknown>(this.api, infoUser)
       .pipe(
         map(res => res),
         catchError(err => { throw { err } }));
   }
 
+  /* TODO: los siguientes métodos se dejan a modo de ejemplo y aprendizaje. */
   loginUserHttpBackend(infoUser: LoginI<string>): Observable<unknown> {
     // TODO: si existen interceptores, esta petición no va a pasar por ellos.
-    return this.httpB.post<unknown>(this.api, JSON.stringify(infoUser));
+    return this.httpB.post<unknown>(this.api, infoUser);
   }
 
   /* TODO:
